@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "title": "The Republic",
+    "author": "Plato",
+    "releaseDate": "380 BCE",
+    "coverImg": "img/the_republic.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Nicomachean Ethics",
+    "author": "Aristotle",
+    "releaseDate": "350 BCE",
+    "coverImg": "img/nicomachean_ethics.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Critique of Pure Reason",
+    "author": "Immanuel Kant",
+    "releaseDate": "1781",
+    "coverImg": "img/critique_of_pure_reason.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Thus Spoke Zarathustra",
+    "author": "Friedrich Nietzsche",
+    "releaseDate": "1886",
+    "coverImg": "img/thus-spoke-zarathustra.jpg"
+  },
+  {
+    "id": 5,
+    "title": "Being and Nothingness",
+    "author": "Jean-Paul Sartre",
+    "releaseDate": "1943",
+    "coverImg": "img/being-and-nothingness.jpg"
+  },
+  {
+    "id": 6,
+    "title": "Fear and Trembling",
+    "author": "Søren Kierkegaard",
+    "releaseDate": "1843",
+    "coverImg": "img/fear-and-trembling.jpg"
+  },
+  {
+    "id": 7,
+    "title": "An Essay Concerning Human Understanding",
+    "author": "John Locke",
+    "releaseDate": "1689",
+    "coverImg": "img/an-essay-concerning-human-understanding.jpg"
+  }
+]
