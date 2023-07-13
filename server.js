@@ -34,22 +34,27 @@ const server = http.createServer(async (req, res) => {
         });
         req.on('end', async () => {
           const book = JSON.parse(body);
-          const booksFilePath = path.join(__dirname, 'books.json');
-          const data = await fs.promises.readFile(booksFilePath, 'utf8');
-          const books = JSON.parse(data);
-          const newBook = { ...book, id: books.length + 1 };
-          books.push(newBook);
-          const updatedBooksData = JSON.stringify(books);
+          if (book.title && book.author && book.releaseDate) {
+            res.statusCode = 201;
+            res.end();
 
-          await fs.promises.writeFile(booksFilePath, updatedBooksData, 'utf8');
-          res.statusCode = 201;
-          res.end();
+            const booksFilePath = path.join(__dirname, 'books.json');
+            const data = await fs.promises.readFile(booksFilePath, 'utf8');
+            const books = JSON.parse(data);
+            const newBook = { ...book, id: books.length + 1 };
+            books.push(newBook);
+            const updatedBooksData = JSON.stringify(books);
+
+            await fs.promises.writeFile(booksFilePath, updatedBooksData, 'utf8');
+          } else {
+            res.statusCode = 401;
+            res.end();
+          }
         });
       }
     case '/style.css':
       const cssPath = path.join(__dirname, 'style.css');
       const cssData = await fs.promises.readFile(cssPath, 'utf8');
-      res.setHeader('Content-Type', 'text/css');
       res.end(cssData);
       break;
     default:

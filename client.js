@@ -39,6 +39,12 @@ async function collectAndSendBook() {
       'Content-Type': 'application/json',
       'Content-Length': postData.length
     }
+  }, res => {
+    if (res.statusCode === 201) {
+      console.log(`${res.statusCode}: Book was created`)
+    } else {
+      console.log(`${res.statusCode}: Check provided data`)
+    }
   });
 
   req.write(postData);
